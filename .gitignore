@@ -19,6 +19,4 @@ tests/report/
 db.sqlite3
 myvenv
 local_settings.py
-
-
-
+.idea/
