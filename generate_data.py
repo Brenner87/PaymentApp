@@ -1,6 +1,7 @@
 import random
 import string
 import sqlite3
+from collections import OrderedDict
 
 
 
@@ -9,6 +10,7 @@ def main():
     table_name='USER_DATA'
     my_gen = generateTable()
     data=my_gen.generateTable(100)
+    print(data)
 
 
 
@@ -21,6 +23,7 @@ class generateTable:
                         'post_code': self.generatePostCode,
                         'phone': self.generatePhone,
                         'email': self.generateMail}
+        self.columns = OrderedDict(sorted(self.columns.items(), reverse=True, key=lambda t: t[0]))
         if row_number:
             table = self.generateTable(row_number)
             self.outputTable(table)

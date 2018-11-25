@@ -20,3 +20,5 @@ db.sqlite3
 myvenv
 local_settings.py
 .idea/
+*.db
+

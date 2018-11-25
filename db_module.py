@@ -9,14 +9,15 @@ from generate_data import generateTable
 def main():
     table_name='USER_DATA'
     db_name='example.db'
-    #res=create_and_fill_db((table_name, db_name))
-    print(select_data(table_name, db_name))
+    res=create_and_fill_db(table_name, db_name)
+    #print(select_data(table_name, db_name))
+    print(res)
 
 def select_data(table_name=None, db_name=None):
     conn = sqlite3.connect(db_name)
     conn.row_factory = dict_factory
     c=conn.cursor()
-    c.execute('select ? form ?', ('first_name', table_name))
+    c.execute('select {} from {}'.format('first_name', table_name))
     result=c.fetchall()
     return result
 
