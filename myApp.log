@@ -1,0 +1,4 @@
+my_app.py[LINE:45]# INFO     [2018-09-27 22:34:16,352]  info message
+my_app.py[LINE:46]# WARNING  [2018-09-27 22:34:16,352]  warn message
+my_app.py[LINE:47]# ERROR    [2018-09-27 22:34:16,353]  error message
+my_app.py[LINE:48]# CRITICAL [2018-09-27 22:34:16,353]  critical message
