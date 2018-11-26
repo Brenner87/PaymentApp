@@ -28,7 +28,7 @@ def create_and_fill_db(table_name=None, db_name=None):
     columns = my_gen.columns.keys()
     fields = ''.join([i + ' VARCHAR(255),' for i in columns])[0:-1]
 
-    drop_command = 'DROP TABLE {}'.format(table_name)
+    drop_command = 'DROP TABLE IF EXISTS {}'.format(table_name)
     create_command = 'CREATE TABLE IF NOT EXISTS {}({})'.format(table_name, fields)
     ins_command = 'INSERT INTO {} VALUES (?,?,?,?,?,?)'.format(table_name)
 
