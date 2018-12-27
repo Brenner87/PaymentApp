@@ -1,0 +1,22 @@
+{"version": 1,
+  "handlers":
+    {"logFile": {
+        "class": "logging.FileHandler",
+        "formatter": "myFormatter",
+        "filename": "myApp.log"},
+      "console": {
+        "class": "logging.StreamHandler",
+        "formatter": "myFormatter",
+        "stream": "ext://sys.stdout"}
+    },
+  "loggers": {
+    "myApp": {
+      "handlers": ["console"],
+      "level": "DEBUG"}
+  },
+  "formatters": {
+    "myFormatter": {
+      "format": "%(filename)s[LINE:%(lineno)d]# %(levelname)-8s [%(asctime)s]  %(message)s"
+    }
+  }
+}
